@@ -9,6 +9,7 @@ import {
   MatMenuModule, 
   MatButtonModule, 
   MatFormFieldModule,
+  MatInputModule,
   MatIconModule, 
   MatToolbarModule, 
   MatDividerModule,
@@ -16,14 +17,20 @@ import {
 } from '@angular/material';
 import { QuestionInfoComponent } from './components/question-info/question-info.component';
 import { QuestionListComponent } from './components/question-list/question-list.component';
-import { VoterComponent } from './components/voter/voter.component'
+import { VoterComponent } from './components/voter/voter.component';
+import { QuestionComponent } from './components/question/question.component';
+import { ChipListComponent } from './components/chip-list/chip-list.component';
+import { PostComponent } from './components/post/post.component'
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     QuestionInfoComponent,
     QuestionListComponent,
-    VoterComponent
+    VoterComponent,
+    QuestionComponent,
+    ChipListComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule, 
@@ -32,6 +39,7 @@ import { VoterComponent } from './components/voter/voter.component'
     MatButtonModule, 
     MatFormFieldModule, 
     MatIconModule, 
+    MatInputModule,
     MatToolbarModule,
     MatDividerModule,
     MatChipsModule

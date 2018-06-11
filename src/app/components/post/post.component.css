@@ -1,0 +1,12 @@
+.questionContent {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    flex-shrink: 1;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    min-width: fit-content;
+}

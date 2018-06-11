@@ -1,0 +1,23 @@
+.chipList {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.chip {
+    border-radius: 2px;
+    background-color: lightblue;
+    color: blue;
+    padding: 5px;
+    width: fit-content;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-weight: 100;
+}
+
+.chip:hover {
+    background-color: slateblue;
+}

@@ -1,0 +1,21 @@
+.question {
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.answersList {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.reply {
+    text-align: center;
+}
+
+.textarea {
+    height: 200px;
+    width: 300px;
+}

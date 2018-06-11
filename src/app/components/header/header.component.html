@@ -7,11 +7,14 @@
       (click)="goToQuestions()"
       >Pitanja</button>
     <form (submit)="submitHandler($event)">
-      <input matInput placeholder="Pretraži..." name="search">
+      <input placeholder="Pretraži..." name="search">
       <button mat-icon-button>
         <mat-icon>search</mat-icon>
       </button>
     </form>
+    <button mat-button 
+      class="askButton"
+      >Postavi pitanje</button>
     <button mat-icon-button 
       class="userButton"
       [matMenuTriggerFor]="menu">
