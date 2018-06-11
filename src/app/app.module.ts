@@ -15,13 +15,15 @@ import {
   MatChipsModule
 } from '@angular/material';
 import { QuestionInfoComponent } from './components/question-info/question-info.component';
-import { QuestionListComponent } from './components/question-list/question-list.component'
+import { QuestionListComponent } from './components/question-list/question-list.component';
+import { VoterComponent } from './components/voter/voter.component'
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     QuestionInfoComponent,
-    QuestionListComponent
+    QuestionListComponent,
+    VoterComponent
   ],
   imports: [
     BrowserModule, 

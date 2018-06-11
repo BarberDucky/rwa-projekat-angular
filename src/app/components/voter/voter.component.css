@@ -1,0 +1,31 @@
+.voter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.points {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.votes {
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+
+.thumbUp {
+    color: green;
+}
+
+.thumbDown {
+    color: red;
+}
+
+.done {
+    color: green;
+}
