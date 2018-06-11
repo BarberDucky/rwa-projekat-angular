@@ -20,7 +20,8 @@ import { QuestionListComponent } from './components/question-list/question-list.
 import { VoterComponent } from './components/voter/voter.component';
 import { QuestionComponent } from './components/question/question.component';
 import { ChipListComponent } from './components/chip-list/chip-list.component';
-import { PostComponent } from './components/post/post.component'
+import { PostComponent } from './components/post/post.component';
+import { AskComponent } from './components/ask/ask.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { PostComponent } from './components/post/post.component'
     VoterComponent,
     QuestionComponent,
     ChipListComponent,
-    PostComponent
+    PostComponent,
+    AskComponent
   ],
   imports: [
     BrowserModule, 
