@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Pita.J</span>
+    <span class="spacer"></span>
+    <button mat-button 
+      class="questionButton"
+      (click)="goToQuestions()"
+      >Pitanja</button>
+    <form (submit)="submitHandler($event)">
+      <input matInput placeholder="Pretraži..." name="search">
+      <button mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+    <button mat-icon-button 
+      class="userButton"
+      [matMenuTriggerFor]="menu">
+      <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu"
+      [overlapTrigger]="false">
+      <button mat-menu-item
+        >Login</button>
+      <button mat-menu-item
+      >Registracija</button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>

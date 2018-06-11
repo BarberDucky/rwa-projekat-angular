@@ -1,0 +1,11 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.userButton {
+    margin-left: 50px;
+}
+
+.questionButton {
+    margin-right: 20px;
+}
