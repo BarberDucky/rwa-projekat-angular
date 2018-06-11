@@ -1,0 +1,59 @@
+.questionInfo{
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    margin: 5px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-width: 70px;
+    min-height: 70px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.questionTitle {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 20px;
+}
+
+.questionLink {
+    color: royalblue;
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.questionLink:hover {
+    color: slateblue;
+    cursor: pointer;
+}
+
+.chipList {
+    display: flex;
+    flex-direction: row;
+}
+
+.chip {
+    border-radius: 2px;
+    background-color: lightblue;
+    color: blue;
+    padding: 5px;
+    width: fit-content;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-weight: 100;
+}
+
+.chip:hover {
+    background-color: slateblue;
+}
