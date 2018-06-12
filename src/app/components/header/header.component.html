@@ -21,10 +21,13 @@
       <mat-icon>person</mat-icon>
     </button>
     <mat-menu #menu="matMenu"
-      [overlapTrigger]="false">
+      [overlapTrigger]="false"
+      >
       <button mat-menu-item
+        (click)="openLoginDialog()"
         >Login</button>
       <button mat-menu-item
+      (click)="openRegisterDialog()"
       >Registracija</button>
     </mat-menu>
   </mat-toolbar-row>

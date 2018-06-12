@@ -13,7 +13,8 @@ import {
   MatIconModule, 
   MatToolbarModule, 
   MatDividerModule,
-  MatChipsModule
+  MatChipsModule,
+  MatDialogModule
 } from '@angular/material';
 import { QuestionInfoComponent } from './components/question-info/question-info.component';
 import { QuestionListComponent } from './components/question-list/question-list.component';
@@ -21,7 +22,9 @@ import { VoterComponent } from './components/voter/voter.component';
 import { QuestionComponent } from './components/question/question.component';
 import { ChipListComponent } from './components/chip-list/chip-list.component';
 import { PostComponent } from './components/post/post.component';
-import { AskComponent } from './components/ask/ask.component'
+import { AskComponent } from './components/ask/ask.component';
+import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
+import { RegisterDialogComponent } from './components/register-dialog/register-dialog.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,9 @@ import { AskComponent } from './components/ask/ask.component'
     QuestionComponent,
     ChipListComponent,
     PostComponent,
-    AskComponent
+    AskComponent,
+    LoginDialogComponent,
+    RegisterDialogComponent
   ],
   imports: [
     BrowserModule, 
@@ -44,8 +49,10 @@ import { AskComponent } from './components/ask/ask.component'
     MatInputModule,
     MatToolbarModule,
     MatDividerModule,
-    MatChipsModule
+    MatChipsModule,
+    MatDialogModule
   ],
+  entryComponents: [LoginDialogComponent, RegisterDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

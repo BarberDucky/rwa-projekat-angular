@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+import { RegisterDialogComponent } from '../register-dialog/register-dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public loginDialog: MatDialog, public registerDialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -21,5 +24,11 @@ export class HeaderComponent implements OnInit {
   }
   goToQuestions() {
     console.log('go to questions')
+  }
+  openLoginDialog() {
+    let dialogRef = this.loginDialog.open(LoginDialogComponent)
+  }
+  openRegisterDialog() {
+    let dialogRef = this.registerDialog.open(RegisterDialogComponent)
   }
 }
