@@ -6,7 +6,7 @@ export class Question {
         public title: string,
         public content: string,
         public answers: Array<Answer>,
-        public correct: string,
+        public answered: boolean,
         public points: Number,
         public tags: Array<string>,
         public poster: string

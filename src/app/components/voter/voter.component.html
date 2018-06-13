@@ -1,8 +1,26 @@
-<div class="voter">
-  <button mat-icon-button><mat-icon class="thumbUp">thumb_up</mat-icon></button>
-  <div class="points">
-    <span class="votes">{{points}}</span>
-    <mat-icon class="done">done</mat-icon>
+<div class="voterWrapper"> 
+ <div class="voter">
+    <button 
+    mat-icon-button
+    (click)="vote(1)" >
+      <mat-icon class="thumbUp">thumb_up</mat-icon>
+    </button>
+    <div class="points">
+      <span class="votes">{{points}}</span>
+      <mat-icon 
+      class="done"
+      *ngIf="!enabled && correct" >
+        done
+      </mat-icon>
+    </div>
+    <button 
+    mat-icon-button
+    (click)="vote(-1)" >
+      <mat-icon class="thumbDown">thumb_down</mat-icon>
+    </button> 
   </div>
-  <button mat-icon-button><mat-icon class="thumbDown">thumb_down</mat-icon></button>    
+  <button mat-button
+  *ngIf="user && user.id === selectedQuestion.poster && !enabled"
+  (click)="choose()" >  Choose as correct
+  </button>
 </div>

@@ -38,7 +38,8 @@ export class QuestionComponent implements OnInit {
     } else {
       const reply = ev.target.elements.reply.value
       if (reply !== "") {
-        const newQuestion = {...this.selectedQuestion, answers: [...this.selectedQuestion.answers, new Answer(reply, 0, this.user.id, false)]}
+        let newQuestion = this.selectedQuestion 
+        newQuestion.answers = [...this.selectedQuestion.answers, new Answer(Date.now().toString() ,reply, 0, this.user.id, false)]
         this.store$.dispatch(new PutQuestion(newQuestion))
       } else {
         alert('Napišite odgovor')

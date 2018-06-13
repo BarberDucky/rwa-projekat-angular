@@ -10,6 +10,7 @@
     [poster]="selectedQuestion.poster"
     [content]="selectedQuestion.content"
     [correct]="false"
+    [id]="selectedQuestion.id"
   ></app-post>
   <div class="title">
       <h1 class="mat-title title">Odgovori</h1>
@@ -25,15 +26,20 @@
       [poster]="answer.poster"
       [content]="answer.content"
       [correct]="answer.correct"
+      [id]="answer.id"
       ></app-post>
       <mat-divider></mat-divider>
     </div>
   </div>
-  <div class="title">
+  <div 
+  class="title"
+  *ngIf="user" >
       <h1 class="mat-title title">Vaš odgovor</h1>
   </div>
-  <mat-divider></mat-divider>
-  <div class="reply">
+  <mat-divider *ngIf="user"></mat-divider>
+  <div 
+  class="reply"
+  *ngIf="user" >
     <form (submit)="handleSubmit($event)">
       <mat-form-field class="textarea">
         <textarea matInput name="reply" placeholder="Napiši odgovor..." [matTextareaAutosize]="false" class="textarea"></textarea>

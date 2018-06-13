@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core'
 import {Effect, Actions} from '@ngrx/effects'
 import { QuestionService } from '../../services/question.service';
-import { POST_QUESTION, GET_ALL_QUESTIONS, PUT_QUESTION } from '../actions.types';
+import { POST_QUESTION, GET_ALL_QUESTIONS, PUT_QUESTION, DELETE_QUESTION } from '../actions.types';
 import { map, switchMap } from 'rxjs/operators';
-import { PostQuestion, PostQuestionSucc, GetAllQuestions, GetAllQuestionsSucc, PutQuestion, PutQuestionSucc } from '../actions';
+import { PostQuestion, PostQuestionSucc, GetAllQuestions, GetAllQuestionsSucc, PutQuestion, PutQuestionSucc, DeleteQuestion, DeleteQuestionSucc } from '../actions';
 
 @Injectable()
 export class QuestionEffects {
@@ -46,6 +46,19 @@ export class QuestionEffects {
                 return this.service.putQuestion(question)
                     .pipe(
                         map(question => new PutQuestionSucc(question))
+                    )
+            })
+        )
+
+    @Effect()
+    delete$ = this.actions$
+        .ofType(DELETE_QUESTION)
+        .pipe(
+            map(info => (info as DeleteQuestion).id),
+            switchMap(id => {
+                return this.service.deleteQuestion(id)
+                    .pipe(
+                        map(id => new DeleteQuestionSucc(id))
                     )
             })
         )

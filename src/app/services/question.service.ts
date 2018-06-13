@@ -31,4 +31,11 @@ export class QuestionService {
                 map(() => question)
             )
     }
+
+    deleteQuestion(id: string): Observable<string> {
+        return this.http.delete(`${this.API_PATH}questions/${id}`)
+            .pipe(
+                map(() => id)
+            )
+    }
 }

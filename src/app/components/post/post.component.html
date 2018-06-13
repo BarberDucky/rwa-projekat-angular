@@ -3,9 +3,17 @@
     [enabled]="isQuestion"
     [points]="points"
     [correct]="correct"
+    [poster]="poster"
+    [id]="id"
   ></app-voter>
   <p class="mat-body-1 content">{{content}}</p>
   <div class="mat-body-1 userInfo">
-    <span>Pitanje postavio {{poster}}</span>
+    <span>{{isQuestion ? 'Pitanje postavio' : 'Odgovorio'}} {{poster}}</span>
+    <button 
+    mat-icon-button
+    (click)="delete()"
+    *ngIf="user && (user.id === poster || user.id === selectedQuestion.poster)" >
+      <mat-icon>delete</mat-icon>
+    </button>
   </div>
 </div>

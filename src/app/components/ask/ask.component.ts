@@ -32,7 +32,7 @@ export class AskComponent implements OnInit {
     const tagsString: string = ev.target.elements.tags.value
     if (title !== '' && content !== '') {
       const tags = tagsString.split(' ')
-      const newQuestion = new Question(Date.now().toString(),title, content, [], "", 0, tags, this.user.id)
+      const newQuestion = new Question(Date.now().toString(),title, content, [], false, 0, tags, this.user.id)
       this.store$.dispatch(new PostQuestion(newQuestion, {...this.user, questions:[...this.user.questions, newQuestion.id]}))
     } else {
       alert('unesite naslov i sadrzaj pitanja')

@@ -15,8 +15,14 @@ export default function(state: string = initialState, action: Action) {
         case types.SELECT_QUESTION: {
             return 'question'
         }
+        case types.DELETE_QUESTION_SUCC: {
+            return 'main'
+        }
         case types.LOGOUT: {
             return 'main'
+        }
+        default: {
+            return state
         }
     }
 }

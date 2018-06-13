@@ -1,8 +1,8 @@
 import {EntityState, EntityAdapter, createEntityAdapter} from '@ngrx/entity'
 import { Question } from '../../model/question';
 import { Action } from '@ngrx/store'
-import { POST_QUESTION, POST_QUESTION_SUCC, GET_ALL_QUESTIONS_SUCC, PUT_QUESTION_SUCC } from '../actions.types';
-import { PostQuestion, PostQuestionSucc, GetAllQuestionsSucc, PutQuestionSucc } from '../actions';
+import { POST_QUESTION, POST_QUESTION_SUCC, GET_ALL_QUESTIONS_SUCC, PUT_QUESTION_SUCC, DELETE_QUESTION_SUCC } from '../actions.types';
+import { PostQuestion, PostQuestionSucc, GetAllQuestionsSucc, PutQuestionSucc, DeleteQuestionSucc } from '../actions';
 
 export interface QuestionsState extends EntityState<Question> {
 
@@ -31,6 +31,10 @@ export default function (state: QuestionsState = initialState, action: Action) {
         case PUT_QUESTION_SUCC: {
             const {question} = action as PutQuestionSucc
             return adapter.updateOne({id: question.id, changes: question}, state)
+        }
+        case DELETE_QUESTION_SUCC: {
+            const {id} = action as DeleteQuestionSucc
+            return adapter.removeOne(id, state)
         }
         default: {
             return state
