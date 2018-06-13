@@ -34,6 +34,10 @@ import { RegisterDialogComponent } from './components/register-dialog/register-d
 import { AuthEffects } from './store/effects/auth.effect';
 import { UserService } from './services/auth.service';
 import { HttpModule } from '@angular/http';
+import { RegEffects } from './store/effects/reg.effect';
+import { QuestionService } from './services/question.service';
+import { UserEffects } from './store/effects/user.effect';
+import { QuestionEffects } from './store/effects/questions.effect';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,12 +67,18 @@ import { HttpModule } from '@angular/http';
     EffectsModule,
     HttpModule,
     StoreModule.forRoot(rootReducer),
-    EffectsModule.forRoot([AuthEffects])
+    EffectsModule.forRoot([
+      AuthEffects, 
+      RegEffects,
+      UserEffects,
+      QuestionEffects
+    ])
   ],
   entryComponents: [LoginDialogComponent, RegisterDialogComponent],
   providers: [
     Actions,
-    UserService
+    UserService,
+    QuestionService
   ],
   bootstrap: [AppComponent]
 })

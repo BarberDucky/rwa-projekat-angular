@@ -1,5 +1,13 @@
 <div class="app">
   <app-header></app-header>
-  <app-ask></app-ask>
+  <app-question
+    *ngIf="page === 'question'"
+  ></app-question>
+  <app-question-list
+    *ngIf="page === 'main'"
+  ></app-question-list>
+  <app-ask
+    *ngIf="page === 'ask'"
+  ></app-ask>
 </div>
 

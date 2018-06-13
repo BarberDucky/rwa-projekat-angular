@@ -12,7 +12,9 @@
         <mat-icon>search</mat-icon>
       </button>
     </form>
-    <button mat-button 
+    <button mat-button
+      *ngIf="user" 
+      (click)="goToAsk()"
       class="askButton"
       >Postavi pitanje</button>
     <button mat-icon-button 
@@ -24,11 +26,27 @@
       [overlapTrigger]="false"
       >
       <button mat-menu-item
+        *ngIf="!user"
         (click)="openLoginDialog()"
         >Login</button>
       <button mat-menu-item
+        *ngIf="!user"
       (click)="openRegisterDialog()"
       >Registracija</button>
+
+
+      <span 
+        *ngIf="user"
+        class="mat-caption">Korisnik: {{user.id}}
+      </span>
+      <button mat-menu-item
+        *ngIf="user"
+        (click)="goToMyQuestions()"
+        >Moja pitanja</button>
+      <button mat-menu-item
+      *ngIf="user"
+      (click)="logout()"
+      >Odjavi se</button>
     </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>

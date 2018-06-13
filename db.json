@@ -1,14 +1,94 @@
 {
-    "users": [
+  "users": [
+    {
+      "id": "mika",
+      "password": "zika",
+      "questions": [],
+      "answers": []
+    },
+    {
+      "id": "asd",
+      "password": "asd",
+      "answers": [],
+      "questions": [
+        "1528843141949",
+        "1528843708771",
+        "1528844199581",
+        "1528845936406"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "1528843141949",
+      "title": "asd",
+      "content": "    asd",
+      "answers": [],
+      "correct": "",
+      "points": 0,
+      "tags": [
+        "asd"
+      ],
+      "poster": "asd"
+    },
+    {
+      "id": "1528843708771",
+      "title": "Naslovcic",
+      "content": "    ;lsaml;sdmfa;sdlfmsd;a",
+      "answers": [
         {
-            "id": "mika",
-            "password": "zika",
-            "questions": [
-
-            ],
-            "answers": [
-                
-            ]
+          "content": "kako je",
+          "points": 0,
+          "poster": "asd",
+          "correct": false
+        },
+        {
+          "content": "dobro je",
+          "points": 0,
+          "poster": "asd",
+          "correct": false
+        },
+        {
+          "content": "drago nam je svima ovde",
+          "points": 0,
+          "poster": "asd",
+          "correct": false
         }
-    ]
+      ],
+      "correct": "",
+      "points": 0,
+      "tags": [
+        "tag",
+        "tag"
+      ],
+      "poster": "asd"
+    },
+    {
+      "id": "1528844199581",
+      "title": "asdasdas",
+      "content": "    asdasdas",
+      "answers": [],
+      "correct": "",
+      "points": 0,
+      "tags": [
+        "asdasdas"
+      ],
+      "poster": "asd"
+    },
+    {
+      "id": "1528845936406",
+      "title": "Ajde radi",
+      "content": "    sanflksdjnfsdfs;dlf",
+      "answers": [],
+      "correct": "",
+      "points": 0,
+      "tags": [
+        "aj",
+        "de",
+        "ra",
+        "di"
+      ],
+      "poster": "asd"
+    }
+  ]
 }

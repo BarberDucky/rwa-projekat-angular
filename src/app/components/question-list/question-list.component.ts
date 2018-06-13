@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Question } from '../../model/question';
+import { Store } from '@ngrx/store';
+import { State } from '../../store';
+import { selectors as QuestionSelectors} from '../../store/reducers/questions.reducer';
+
 
 @Component({
   selector: 'app-question-list',
@@ -7,7 +13,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionListComponent implements OnInit {
 
-  constructor() { }
+  public questions$: Observable<Question[]>
+
+  constructor(
+    private store$: Store<State>
+  ) {
+    this.questions$ = this.store$.select((state: State) => QuestionSelectors.selectAll(state.questions))
+  }
 
   ngOnInit() {
   }

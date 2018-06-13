@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Question } from '../../model/question';
+import { Store } from '@ngrx/store';
+import { State } from '../../store';
+import { SelectQuestion } from '../../store/actions';
 
 @Component({
   selector: 'app-question-info',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private store$: Store<State>
+  ) { }
+
+  @Input() 
+  public question: Question
 
   ngOnInit() {
   }
 
+  select(question) {
+    this.store$.dispatch(new SelectQuestion(question))
+  }
 }

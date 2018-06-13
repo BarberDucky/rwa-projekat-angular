@@ -3,15 +3,24 @@
       <h1 class="mat-headline headline">Kreiraj pitanje</h1>
   </div>
   <mat-divider></mat-divider>
-  <form>
-    <mat-form-field class="example-full-width">
+  <form (submit)="handleSubmit($event)">
+    <mat-form-field>
     <input matInput placeholder="Naslov" name="title">
     </mat-form-field>
     <br />
+    <mat-form-field>
+      <input matInput placeholder="Oznake (space-separated)" name="tags">
+      </mat-form-field>
+      <br />
     <mat-form-field class="textarea">
-    <textarea matInput placeholder="Napiši pitanje..." [matTextareaAutosize]="false" class="textarea"></textarea>
+    <textarea matInput 
+      placeholder="Napiši pitanje..." 
+      [matTextareaAutosize]="false" 
+      class="textarea"
+      name="content">
+    </textarea>
     </mat-form-field>
     <br />
-    <button mat-button>Postavi pitanje</button>
+    <button mat-button type="submit">Postavi pitanje</button>
   </form>
 </div>

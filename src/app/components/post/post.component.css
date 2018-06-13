@@ -10,3 +10,9 @@
     flex-direction: column;
     min-width: fit-content;
 }
+
+.content {
+    flex-grow: 1;
+    margin-left:10px;
+    margin-right: 10px;
+}

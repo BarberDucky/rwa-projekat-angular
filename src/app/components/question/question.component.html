@@ -1,33 +1,44 @@
 <div class="question">
   <div class="headline">
-      <h1 class="mat-headline headline">Tandara mandara tandara mandara tandr?</h1>
+      <h1 class="mat-headline headline">{{selectedQuestion.title}}</h1>
   </div>
-  <app-chip-list></app-chip-list>
+  <app-chip-list [tags]="selectedQuestion.tags"></app-chip-list>
   <mat-divider></mat-divider>
-  <app-post></app-post>
+  <app-post
+    [points]="selectedQuestion.points"
+    [isQuestion]="true"
+    [poster]="selectedQuestion.poster"
+    [content]="selectedQuestion.content"
+    [correct]="false"
+  ></app-post>
   <div class="title">
       <h1 class="mat-title title">Odgovori</h1>
   </div>
   <mat-divider></mat-divider>
   <div class="answersList">
-    <app-post></app-post>
-    <mat-divider></mat-divider>
-    <app-post></app-post>
-    <mat-divider></mat-divider>
-    <app-post></app-post>
-    <mat-divider></mat-divider>
-    <app-post></app-post>
+    <div
+    *ngFor="let answer of selectedQuestion.answers"
+    >
+      <app-post
+      [points]="answer.points"
+      [isQuestion]="false"
+      [poster]="answer.poster"
+      [content]="answer.content"
+      [correct]="answer.correct"
+      ></app-post>
+      <mat-divider></mat-divider>
+    </div>
   </div>
   <div class="title">
       <h1 class="mat-title title">Vaš odgovor</h1>
   </div>
   <mat-divider></mat-divider>
   <div class="reply">
-    <form>
+    <form (submit)="handleSubmit($event)">
       <mat-form-field class="textarea">
-        <textarea matInput placeholder="Napiši odgovor..." [matTextareaAutosize]="false" class="textarea"></textarea>
+        <textarea matInput name="reply" placeholder="Napiši odgovor..." [matTextareaAutosize]="false" class="textarea"></textarea>
       </mat-form-field>
-      <button mat-button>Odgovori</button>
+      <button mat-button type="submit">Odgovori</button>
     </form>
   </div>
 </div>

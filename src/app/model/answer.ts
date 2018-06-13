@@ -1,8 +1,8 @@
 export class Answer {
     constructor(
-        public content: String,
-        public votes: Number,
-        public user: String,
-        public chosen: Boolean
+        public content: string,
+        public points: Number,
+        public poster: string,
+        public correct: Boolean
     ) {}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-voter',
@@ -8,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class VoterComponent implements OnInit {
 
   constructor() { }
+
+  @Input()
+  public enabled: boolean
+  @Input()
+  public correct: boolean
+  @Input()
+  public points: Number
 
   ngOnInit() {
   }

@@ -21,9 +21,14 @@ export class LoginDialogComponent implements OnInit {
 
   handleLogin(ev) {
     ev.preventDefault()
-    this.store$.dispatch(new AuthReq(ev.target.elements.username.value, ev.target.elements.password.value))
-
-    this.dialogRef.close()
+    const username = ev.target.elements.username.value
+    const password = ev.target.elements.password.value
+    if (username !== "" && password !== "") {
+      this.store$.dispatch(new AuthReq(username, password))
+      this.dialogRef.close()
+    } else {
+      alert('Unesite username i password')
+    }
   }
 
   onNoClick() {

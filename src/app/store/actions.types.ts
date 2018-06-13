@@ -3,8 +3,24 @@ export const AUTH_SUCC = 'AUTH_SUCC'
 export const AUTH_FAIL = 'AUTH_FAIL'
 
 export const REG_REQ = 'REG_REQ'
+export const REG_SUCC = 'REG_SUCC'
+export const REG_FAIL = 'REG_FAIL'
 
-export const GET_QUESTION = 'GET_QUESTION'
+export const LOGOUT = 'LOGOUT'
+
+export const UPDATE_PAGE = 'UPDATE_PAGE'
+
+export const GET_ALL_QUESTIONS = 'GET_ALL_QUESTIONS'
 export const POST_QUESTION = 'POST_QUESTION'
 export const PUT_QUESTION = 'PUT_QUESTION'
 export const DELETE_QUESTION = 'DELETE_QUESTION'
+
+export const GET_ALL_QUESTIONS_SUCC = 'GET_ALL_QUESTIONS_SUCC'
+export const POST_QUESTION_SUCC = 'POST_QUESTION_SUCC'
+export const PUT_QUESTION_SUCC = 'PUT_QUESTION_SUCC'
+export const DELETE_QUESTION_SUCC = 'DELETE_QUESTION_SUCC'
+
+export const UPDATE_USER = 'UPDATE_USER'
+
+export const SELECT_QUESTION = 'SELECT_QUESTION'
+export const DESELECT_QUESTION = 'DESELECT_QUESTION'

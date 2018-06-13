@@ -2,11 +2,13 @@ import { Answer } from "./answer";
 
 export class Question {
     constructor(
-        public title: String,
-        public content: String,
+        public id: string,
+        public title: string,
+        public content: string,
         public answers: Array<Answer>,
-        public correct: String,
+        public correct: string,
         public points: Number,
-        public tags: Array<String>
+        public tags: Array<string>,
+        public poster: string
     ) {}
 }
