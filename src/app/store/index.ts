@@ -6,16 +6,19 @@ import pageReducer from "./reducers/page.reducer";
 import questionsReducer, { QuestionsState } from "./reducers/questions.reducer";
 import { Question } from "../model/question";
 import selectedQuestionReducer from "./reducers/selected-question.reducer";
+import listReducer, { listState } from "./reducers/list.reducer";
 export interface State {
     user: User,
     page: string,
     questions: QuestionsState,
-    selectedQuestion: Question
+    selectedQuestion: Question,
+    listFormat: listState 
 }
 
 export const rootReducer: ActionReducerMap<State> = {
     user: userReducer,
     page: pageReducer,
     questions: questionsReducer,
-    selectedQuestion: selectedQuestionReducer
+    selectedQuestion: selectedQuestionReducer,
+    listFormat: listReducer
 }

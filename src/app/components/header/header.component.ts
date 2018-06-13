@@ -4,7 +4,7 @@ import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 import { RegisterDialogComponent } from '../register-dialog/register-dialog.component';
 import { Store, select } from '@ngrx/store';
 import { State } from '../../store';
-import { AuthReq, Logout, UpdatePage, GetAllQuestions } from '../../store/actions';
+import { AuthReq, Logout, UpdatePage, GetAllQuestions, SelectList } from '../../store/actions';
 import { User } from '../../model/user';
 import { Observable } from 'rxjs';
 
@@ -32,12 +32,20 @@ export class HeaderComponent implements OnInit {
 
   submitHandler(ev) {
     ev.preventDefault()
-    if (ev.target.elements.search.value === "") {
-      alert("Unesite ključne reči")
+    let tags = ev.target.elements.search.value
+    if (tags === "") {
+      this.store$.dispatch(new SelectList('Sva pitanja', null))
+      this.store$.dispatch(new UpdatePage('main'))
+      this.store$.dispatch(new GetAllQuestions())
+    } else {
+      tags = tags.split(" ")
+      this.store$.dispatch(new SelectList('Pretraga', tags))
+      this.store$.dispatch(new UpdatePage('main'))
+      this.store$.dispatch(new GetAllQuestions())
     }
-    console.log(ev.target.elements.search.value)
   }
   goToQuestions() {
+    this.store$.dispatch(new SelectList('Sva pitanja', null))
     this.store$.dispatch(new GetAllQuestions())
   }
   openLoginDialog() {
@@ -47,7 +55,9 @@ export class HeaderComponent implements OnInit {
     let dialogRef = this.registerDialog.open(RegisterDialogComponent)
   }
   goToMyQuestions() {
+    this.store$.dispatch(new SelectList('Moja pitanja', this.user.id))
     this.store$.dispatch(new UpdatePage('main'))
+    this.store$.dispatch(new GetAllQuestions())
   }
   goToAsk() {
     this.store$.dispatch(new UpdatePage('ask'))

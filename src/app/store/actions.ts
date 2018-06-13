@@ -99,3 +99,8 @@ export class DeselectQuestion implements Action {
     type = types.DESELECT_QUESTION
     constructor() { }
 } 
+
+export class SelectList implements Action {
+    type = types.SELECT_LIST
+    constructor(public title: string, public criteria: any) { }
+}

@@ -1,7 +1,8 @@
 <div class="chipList">
   <div 
     class="chip"
-    *ngFor="let chip of tags">
+    *ngFor="let chip of tags"
+    (click)="searchByTag(chip)" >
       {{chip}}
   </div>
 </div>

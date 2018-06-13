@@ -1,11 +1,13 @@
 <div class="questionList">
   <div class="headline">
-    <h1 class="mat-headline headline">Latest questions</h1>
+    <h1 class="mat-headline headline">{{list.title}}</h1>
+    <app-chip-list *ngIf="list.title === 'Pretraga po oznaci'" [tags]="[list.criteria]"></app-chip-list>
   </div>
   <div class="list">
     <div *ngFor="let question of questions$ | async">
       <app-question-info
         [question] = "question"
+        *ngIf="filterList(question)"
       >
       </app-question-info>
       <mat-divider></mat-divider>
