@@ -30,7 +30,7 @@ export class AuthEffects {
                         return new AuthSucc(user)}
                     ),
                     catchError(() => {
-                        alert('fail to login')
+                        alert('failed to login')
                         return []
                     })
                 )

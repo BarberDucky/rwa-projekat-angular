@@ -4,6 +4,7 @@ import { Question } from '../../model/question';
 import { Store } from '@ngrx/store';
 import { State } from '../../store';
 import { selectors as QuestionSelectors} from '../../store/reducers/questions.reducer';
+import { GetAllQuestions } from '../../store/actions';
 
 
 @Component({
@@ -22,6 +23,7 @@ export class QuestionListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.store$.dispatch(new GetAllQuestions())
   }
 
 }

@@ -15,7 +15,14 @@ export class UserService {
       console.log('udje u servis', id, password)
     return this.http.get(`${this.API_PATH}users/${id}`)
       .pipe(
-          map(res => res.json() || [])
+          map(res => {
+            const user = res.json()
+            if(user.password === password) {
+              return user
+            } else {
+              throw new Error('fail on login')
+            }
+          })
         )
   }
 
